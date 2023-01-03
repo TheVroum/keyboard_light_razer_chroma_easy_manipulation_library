@@ -1,6 +1,5 @@
 """Copyright © 2023 Jean Oustry. Tous droits réservés.
 """
-import pynput, click
 import time, threading, itertools
 from .api import razerServerChromaConnection
 
@@ -65,11 +64,9 @@ def example_new_api():
             time.sleep(0.3)
 
 
-@click.command()
-@click.option("--example", default=2, required=True, show_default=True)
-def main(example):
+def main():
     try:
-        [example_mooving_highlight, example_random_highlight, example_new_api][example - 1]()
+        example_random_highlight()
     except EnvironmentError as err: print(err, "Make sure the latest version of razer synapse is installed. https://www.razer.com/fr-fr/synapse-3")
 
 if __name__ == "__main__":

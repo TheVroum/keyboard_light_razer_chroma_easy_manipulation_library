@@ -11,7 +11,7 @@ Execute ```pip install razer-chroma-keyboard```
 
 # How to test ?
 
-Execute ```python -m razer_chroma_keyboard```. You should see promptly (in the 3 seconds) the result on your keyboard.
+Execute ```python -m razer_chroma_keyboard```. You should see promptly (in less than 3 seconds) the result on your keyboard.
 
 # How to use as a library ?
 

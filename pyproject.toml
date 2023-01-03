@@ -1,6 +1,6 @@
 [project]
 name = "razer_chroma_keyboard"
-version = "0.0.1"
+version = "0.0.1.post1"
 authors = [
   { name="Jean Oustry", email="" },
 ]
@@ -12,7 +12,8 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft",
 ]
-dependencies=["requests", "pynput~=1.7.6", "click"]
+# dependencies=["requests", "pynput~=1.7.6", "click"]
+dependencies=["requests"]
 
 [project.urls]
 "Homepage" = "https://github.com/TheVroum/keyboard_light_razer_chroma_easy_manipulation_library"
