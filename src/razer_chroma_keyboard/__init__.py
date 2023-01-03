@@ -66,7 +66,6 @@ def example_new_api():
 
 
 @click.command()
-# @click.option("--example", prompt="Which example ? (1, 2, or 3)", default=2, required=True, show_default=True)
 @click.option("--example", default=2, required=True, show_default=True)
 def main(example):
     try:

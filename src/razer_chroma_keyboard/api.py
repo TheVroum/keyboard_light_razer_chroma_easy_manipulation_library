@@ -1,6 +1,6 @@
 """Copyright © 2023 Jean Oustry. Tous droits réservés.
 """
-import random, json, threading, time, itertools
+import random, json, threading, time, itertools, copy
 import requests
 
 HANDSHAKE_URL = "http://localhost:54235/razer/chromasdk"
@@ -84,6 +84,7 @@ class razerServerChromaConnection:
         Args:
             colors_matrix (list[list[tuple[int, int, int]]]): Color matrix made of 22 X 6 (R, G, B) tuples.
         """
+        colors_matrix = copy.deepcopy(colors_matrix)
         for i in itertools.product(range(22), range(6)):
             t = colors_matrix[i[1]][i[0]]
             if any(map(lambda c: c >= 2**8, t)): raise ValueError("Each value of each tuple, representing one colour, should be between 0 and 255 included.")

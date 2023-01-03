@@ -2,21 +2,21 @@
 name = "razer_chroma_keyboard"
 version = "0.0.1"
 authors = [
-  { name="Jean Oustry", email="author@example.com" },
+  { name="Jean Oustry", email="" },
 ]
 description = "Razer chroma compatible keyboard backlight driving library."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft",
 ]
-dependencies=["requests", "pynput", "click"]
+dependencies=["requests", "pynput~=1.7.6", "click"]
 
 [project.urls]
-"Homepage" = "https://github.com/pypa/sampleproject"
-"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+"Homepage" = "https://github.com/TheVroum/keyboard_light_razer_chroma_easy_manipulation_library"
+"Bug Tracker" = "https://github.com/TheVroum/keyboard_light_razer_chroma_easy_manipulation_library/issues"
 
 [build-system]
 requires = ["hatchling"]
