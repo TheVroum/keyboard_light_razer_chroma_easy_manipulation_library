@@ -36,9 +36,11 @@ class razerServerChromaConnection:
         # Vérication qu'il s'agit bien d'un serveur razer chroma, et que sa version contient ses attibuts.
         if (all([requirement in res for requirement in REQUIREMENTS])):
             # Vérification que la version est suffisamment proche
-            return bool((all([int(res[requirement][:1]) >= mv for mv, requirement in zip(MIN_VERSIONS, REQUIREMENTS)])))
-        else:
-            return False
+            return all(
+                int(res[requirement][0]) >= mv
+                for mv, requirement
+                in zip(MIN_VERSIONS, REQUIREMENTS))
+        return False
 
     def __init__(self, default_state: list[list[int]] = [[2**7 + 2**15 + 2**23 for _ in range(22)] for __ in range(6)]
         , initialization_infos: dict=INITIALIZATION_INFOS, sleep_multiplicator:float=1):
