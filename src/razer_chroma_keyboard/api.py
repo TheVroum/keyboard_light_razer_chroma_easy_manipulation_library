@@ -1,6 +1,11 @@
 """Copyright © 2023 Jean Oustry. Tous droits réservés.
 """
-import random, json, threading, time, itertools, copy
+import random
+import json
+import threading
+import time
+import itertools
+import copy
 import requests
 
 HANDSHAKE_URL = "http://localhost:54235/razer/chromasdk"
