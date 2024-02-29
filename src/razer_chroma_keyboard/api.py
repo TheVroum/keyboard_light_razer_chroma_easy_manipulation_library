@@ -24,8 +24,8 @@ INITIALIZATION_INFOS = {
 
 
 class razerServerChromaConnection:
-    """Keyboard lights manipulation connection. Create an instance of this object to manipulate the keyboard lights.
-    """
+    """Keyboard lights manipulation connection. Create an instance of this object to manipulate the keyboard lights."""
+
     @staticmethod
     def checkServer() -> bool:
         """Return True if server is running, valid, with the right version. No need to check explicitly for platform.
