@@ -1,5 +1,4 @@
-"""Copyright © 2023 Jean Oustry. Tous droits réservés.
-"""
+"""Copyright © 2023 Jean Oustry. Tous droits réservés."""
 import time
 from .api import razerServerChromaConnection
 
