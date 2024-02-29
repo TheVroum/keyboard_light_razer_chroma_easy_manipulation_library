@@ -1,5 +1,4 @@
-"""Copyright © 2023 Jean Oustry. Tous droits réservés.
-"""
+"""Copyright © 2023 Jean Oustry. Tous droits réservés."""
 import random
 import json
 import threading
@@ -98,9 +97,7 @@ class razerServerChromaConnection:
         self._apply_chroma_custom(colors_matrix) 
 
     def apply_rand_chroma_custom(self):
-        """
-        Assign a different random color to the light each key of the keyboard.
-        """
+        """Assign a different random color to the light each key of the keyboard."""
         self._apply_chroma_custom([[int(random.random() * (2**24)) for _ in range(22)] for __ in range(6)])
 
     def reset_to_default_state(self):
