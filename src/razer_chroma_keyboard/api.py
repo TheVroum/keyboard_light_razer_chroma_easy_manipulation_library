@@ -38,7 +38,7 @@ class razerServerChromaConnection:
         except requests.HTTPError:
             return False
         # Vérication qu'il s'agit bien d'un serveur razer chroma, et que sa version contient ses attibuts.
-        if (all(requirement in res for requirement in REQUIREMENTS)):
+        if all(requirement in res for requirement in REQUIREMENTS):
             # Vérification que la version est suffisamment proche
             return all(
                 int(res[requirement][0]) >= mv
