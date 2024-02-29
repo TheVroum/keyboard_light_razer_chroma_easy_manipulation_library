@@ -48,7 +48,7 @@ class razerServerChromaConnection:
         return False
 
     def __init__(self, default_state: list[list[int]] = [[2**7 + 2**15 + 2**23 for _ in range(22)] for __ in range(6)]
-        , initialization_infos: dict=INITIALIZATION_INFOS, sleep_multiplicator:float=1):
+        , initialization_infos: dict=None, sleep_multiplicator:float=1):
         """Create a Razer Chroma connection. Only one can be active at a time. Should be used with a context manager.
 
         Args:
@@ -59,6 +59,8 @@ class razerServerChromaConnection:
         Raises:
             EnvironmentError: Raised if the Razer Chroma REST server not running or not valid.
         """
+        if initialization_infos is None:
+            initialization_infos = INITIALIZATION_INFOS
         if not type(self).checkServer(): raise EnvironmentError("Razer Chroma REST server not running or not valid.")
         time.sleep(0.5*sleep_multiplicator)
         self.uri = json.loads(requests.post(
