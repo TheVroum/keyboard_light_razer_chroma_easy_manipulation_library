@@ -95,20 +95,25 @@ class razerServerChromaConnection:
             colors_matrix[i[1]][i[0]] = t[0] + t[1] * (2**8) + t[2] * (2**16)
         self._apply_chroma_custom(colors_matrix) 
 
-    def apply_rand_chroma_custom(self): self._apply_chroma_custom([[int(random.random() * (2**24)) for _ in range(22)] for __ in range(6)])
-    """Assign a different random color to the light each key of the keyboard.
-    """
+    def apply_rand_chroma_custom(self):
+        """
+        Assign a different random color to the light each key of the keyboard.
+        """
+        self._apply_chroma_custom([[int(random.random() * (2**24)) for _ in range(22)] for __ in range(6)])
 
-    def reset_to_default_state(self): self._apply_chroma_custom(self.default_state)
-    """Resests the keyboard lights to the default state provided during the razerServerChromaConnection creation.
-    """
+    def reset_to_default_state(self):
+        """
+        Resests the keyboard lights to the default state provided during the razerServerChromaConnection creation.
+        """
+        self._apply_chroma_custom(self.default_state)
 
     @staticmethod
     def _generate_half_luminosity_chroma_custom():
         return [[2**7 + 2**15 + 2**23 for _ in range(22)] for __ in range(6)]
 
     def generate_key_highlight_chroma_custom(self, column: int, row: int):
-        """Sets the light of the key with the provided coordinates to red. Set all the other lights to grey.
+        """
+        Sets the light of the key with the provided coordinates to red. Set all the other lights to grey.
         """
         if column >= 22 or row >= 6: raise ValueError("Coordinates out of bounds. Column should be between 0 and 21 included, and row between 0 and 5 included.")
         l = razerServerChromaConnection._generate_half_luminosity_chroma_custom()
