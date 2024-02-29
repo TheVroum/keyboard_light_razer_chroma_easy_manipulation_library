@@ -4,7 +4,7 @@ import time
 from .api import razerServerChromaConnection
 
 __all__ = [
-    razerServerChromaConnection
+    "razerServerChromaConnection"
 ]
 
 
