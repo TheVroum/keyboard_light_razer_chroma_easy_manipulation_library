@@ -36,10 +36,7 @@ class razerServerChromaConnection:
         # Vérication qu'il s'agit bien d'un serveur razer chroma, et que sa version contient ses attibuts.
         if (all([requirement in res for requirement in REQUIREMENTS])):
             # Vérification que la version est suffisamment proche
-            if (all([int(res[requirement][:1]) >= mv for mv, requirement in zip(MIN_VERSIONS, REQUIREMENTS)])):
-                return True
-            else:
-                return False
+            return bool((all([int(res[requirement][:1]) >= mv for mv, requirement in zip(MIN_VERSIONS, REQUIREMENTS)])))
         else:
             return False
 
